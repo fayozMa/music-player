@@ -14,7 +14,17 @@
         <div>
             <img src="./images/allMyFriendAreToxic.jpg" alt="" id="cover" class="cover" />
         </div>
+        <p id="songName">All My Friend Are Toxic</p>
         <audio id="audio" src="./musics/allMyFriendAreToxic.mp3"></audio>
+        <div class="progres-and-time-container">
+            <div class="progress" id="progress">
+                <div class="progress-container" id="progress-container"></div>
+            </div>
+            <div class="time-container">
+                <span id="start">00:00</span>
+                <span id="end">00:00</span>
+            </div>
+        </div>
         <div class="volume">
             <input type="range" id="changeVolume" class="changeVolume" min="0" , max="1" step="0.01">
         </div>
@@ -22,7 +32,8 @@
             <button id="backward" class="fa-solid fa-backward-step"></button>
             <button id="playBtnToggle" class="fa-solid fa-play"></button>
             <button id="forward" class="fa-solid fa-forward-step"></button>
-    </div>
+        </div>
+    </div>    
     <script src="./js/app.js"></script>
 </body>
 </html>

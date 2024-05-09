@@ -53,16 +53,28 @@ table {
 }
 html,body {
     height:100%;
+    font-size: 62.5%;
 }
 body{
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../bg-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 1.6rem;
 }
 .player{
-    background-color: cornflowerblue;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 400px;
+    border-radius: 1rem;
     padding: 40px;
-}
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 .controlBtns{
     display: flex;
     justify-content: center;
@@ -70,11 +82,22 @@ body{
     width: 100%;
     gap: 4rem;
 }
+#songName{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
 .controlBtns button {
     background-color: transparent;
     border: 0px;
     font-size: 2.5rem;
     cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 15px;
+    color: white;
+    opacity: 70%;
 }
 button:nth-child(2){
     font-size: 3.5rem;
@@ -94,7 +117,7 @@ button:nth-child(2){
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 30px;
-    animation-name: spinner;
+    animation-name:spinner;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -103,9 +126,38 @@ button:nth-child(2){
 .player.play .cover {
     animation-play-state: running;
 }
+.progres-and-time-container{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.progress{
+    height: 6px;
+    cursor: pointer;
+    background-color: rgb(185,182,182);
+    border-radius: 1rem;
+}
+.progress-container{
+    background-color: red;
+    width: 0%;
+    height: inherit;
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+.time-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.time-container span {
+    color: white;
+    font-size: 2rem;
+}
 .volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
-    margin-left: 55px;
     margin-bottom: 20px;
 }
 .changeVolume{
@@ -113,12 +165,15 @@ button:nth-child(2){
     cursor: pointer;
 }
 .changeVolume::-webkit-slider-runnable-track {
-    height: 15px;
+    height: 4px;
     background: #ccc;
     border-radius: 16px;
 }
 .changeVolume::-moz-range-track {
-    height: 15px;
+    height: 4px;
     background: #ccc;
     border-radius: 16px;
+}
+.changeVolume::-webkit-slider-thumb{
+    margin-top: -6px;
 }
