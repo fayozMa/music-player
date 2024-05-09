@@ -6,6 +6,7 @@ const songNameEl = document.getElementById("songName")
 const changeVolume = document.getElementById("changeVolume")
 const progressEl = document.getElementById("progress")
 const progressContainer = document.getElementById("progress-container")
+const muteEl = document.getElementById("mute")
 let currentTrack = 0
 //buttons
 const player = document.getElementById("player")
@@ -69,12 +70,12 @@ const progress = (e) => {
     let minutes = Math.floor(durationMusic / 60)
     let seconds = Math.floor(durationMusic % 60)
     end.textContent = `${minutes}:${(seconds =
-      seconds < 10 ? '0' + seconds : seconds)}`
+    seconds < 10 ? '0' + seconds : seconds)}`
   
     let currentMinutes = Math.floor(currentTimeMusic / 60)
     let currentSecond = Math.floor(currentTimeMusic % 60)
     start.textContent = `${currentMinutes}:${(currentSecond =
-      currentSecond < 10 ? '0' + currentSecond : currentSecond)}`
+    currentSecond < 10 ? '0' + currentSecond : currentSecond)}`
 }
 function setProgressTime(e) {
     const width = this.clientWidth
@@ -84,4 +85,4 @@ function setProgressTime(e) {
 }    
 audioEl.addEventListener('timeupdate', progress)
 progressEl.addEventListener('click', setProgressTime)
-audio.addEventListener('ended', nextSong)
+audio.addEventListener('ended', plus)
