@@ -85,4 +85,4 @@ function setProgressTime(e) {
 }    
 audioEl.addEventListener('timeupdate', progress)
 progressEl.addEventListener('click', setProgressTime)
-audio.addEventListener('ended', plus)
+audio.addEventListener('ended', minus)
